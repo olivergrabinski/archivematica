@@ -2,9 +2,6 @@ name: Generate and upload SBOM
 
 on:
   push:
-    branches:
-    - qa/**
-    - stable/**
 
 jobs:
   generate-sbom:
