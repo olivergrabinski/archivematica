@@ -8,8 +8,6 @@ on:
         default: "qa/1.x"
         required: true
         type: "string"
-  pull_request:
-  push:
 jobs:
   test:
     name: "Test ${{ matrix.rule }} on ${{ matrix.python-version }}"

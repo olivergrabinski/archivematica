@@ -1,7 +1,7 @@
 name: Generate and upload SBOM
 
 on:
-  push:
+  workflow_dispatch:
 
 jobs:
   generate-sbom:
