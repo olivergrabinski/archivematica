@@ -29,7 +29,7 @@ jobs:
       with:
         file: hack/Dockerfile
         push: true
-        platforms: linux/amd64,linux/arm64
+        platforms: linux/amd64
         tags: |
           olivergra/archivematica-mcp-client:latest
         build-args: |

@@ -1,4 +1,4 @@
-name: Build Archivematica MCP Server Docker Image
+name: Build Archivematica Dashboard Docker Image
 
 on:
   push:
@@ -31,9 +31,9 @@ jobs:
         push: true
         platforms: linux/amd64
         tags: |
-          olivergra/archivematica-mcp-server:latest
+          olivergra/archivematica-dashboard:latest
         build-args: |
-          TARGET=archivematica-mcp-server
+          TARGET=archivematica-dashboard
           USER_ID=1000
           GROUP_ID=1000
           UBUNTU_VERSION=22.04

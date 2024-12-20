@@ -1,4 +1,4 @@
-name: Build Archivematica MCP Server Docker Image
+name: Build Archivematica Storage Service Docker Image
 
 on:
   push:
@@ -14,6 +14,8 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4
+      with:
+        submodules: true
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
@@ -27,13 +29,13 @@ jobs:
     - name: Build and Push Docker Image
       uses: docker/build-push-action@v4
       with:
-        file: hack/Dockerfile
+        context: hack/submodules/archivematica-storage-service
         push: true
         platforms: linux/amd64
         tags: |
-          olivergra/archivematica-mcp-server:latest
+          olivergra/archivematica-storage-service:latest
         build-args: |
-          TARGET=archivematica-mcp-server
+          TARGET=archivematica-storage-service
           USER_ID=1000
           GROUP_ID=1000
           UBUNTU_VERSION=22.04
